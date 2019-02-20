@@ -3,10 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Problem Solving Challenge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css">
 </head>
 <body>
     <header></header>
@@ -14,15 +13,29 @@
     <div>
         <div>
             <p>Mental Models</p> 
-            <form><input>Add your own mental models - Seperate each with a comma</></form>
+            <form id="number-input-mental-models">
+                <input name="mental-models-number" type="radio" value="1" checked>1</>
+                <input name="mental-models-number" type="radio" value="2">2</>
+                <input name="mental-models-number" type="radio" value="3">3</>
+            </form>
+            <form id="text-input-mental-models"><input type="text" name="mentalModels" id="added-mental-models">Add your own mental models - Seperate each with a comma</></form>
             <p>Problems</p>
-            <form><input>Add your own problems - Seperate each with a comma</form>
+            <form id="number-input-problems">
+                <input name="problem-number" type="radio" value="1" checked>1</>
+                <input name="problem-number" type="radio" value="2">2</>
+                <input name="problem-number" type="radio" value="3">3</>
+            </form>
+                
+            <form id="text-input-problems"><input type="text" name="problems" id="added-problems">Add your own problems - Seperate each with a comma</form>
         </div>
-        <button>Generate Challenge</button>
+        <button onclick=generateChallenge()>Generate Challenge</button>
     </div>
     <form>
         <input/>What are you thinking of?
     </form>
     <button>Send this to me</button>
 </body>
+
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script src="script.js"></script>
 </html>
