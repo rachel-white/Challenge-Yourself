@@ -54,3 +54,49 @@ var problems = [
     "Dealing with complicated beurocracies", 
     ]
 
+function generateChallenge() {
+    //Saving inputted data:
+    var addedMentalModels = document.getElementById("added-mental-models").value;
+    var addedProblems = document.getElementById("added-problems").value;
+
+    function sortInputtedData(dataFromInput) {
+        if (!(dataFromInput == "")) {
+            if (dataFromInput.includes(",")) {
+                //divide into substrings, and then sort into objects.
+                console.log("The string contains a comma and possibly colons" + dataFromInput);
+            } else if (dataFromInput.includes(":")) {
+                //sort the single input
+                console.log("The string contains a colon but no comma "+dataFromInput);
+            } else {
+                console.log("The data you entered does not contain the correct punctuation to be used.");
+            }
+        } else {
+            console.log("The string is empty. Ignore and do not process input.");
+        }
+        }
+        
+        sortInputtedData(addedMentalModels);
+        sortInputtedData(addedProblems);
+        
+        function generateMentalModels(numberSelected) {
+            for (var i = 0; i <numberSelected; i++) {
+                var k = Math.floor((Math.random() * mentalModels.length) + 1);
+                console.log(mentalModels[k]);
+            }
+        }
+        
+        function generateProblems(numberSelected) {
+           for (var i = 0; i <numberSelected; i++) {
+                var k = Math.floor((Math.random() * problems.length) + 1);
+                console.log(problems[k]);
+            }
+        }
+        
+        var numberOfModelsSelected = $('input[name=mental-models-number]:checked', '#number-input-mental-models').val();
+        var numberOfProblemsSelected = $('input[name=problem-number]:checked', '#number-input-problems').val();
+        
+        console.log(numberOfModelsSelected);
+        console.log(numberOfProblemsSelected);
+        generateMentalModels(numberOfModelsSelected);
+        generateProblems(numberOfProblemsSelected);
+}
