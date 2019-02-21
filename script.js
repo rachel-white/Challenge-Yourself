@@ -82,8 +82,7 @@ function generateChallenge() {
             for (var i = 0; i <numberSelected; i++) {
                 var k = Math.floor((Math.random() * mentalModels.length) + 1);
                 console.log(mentalModels[k]);
-                
-                $("#generated-mental-models").html(
+                $("#generated-mental-models").append(
                     `<div class="generated-model">${mentalModels[k]}</div>`
                     )
             }
@@ -93,6 +92,9 @@ function generateChallenge() {
            for (var i = 0; i <numberSelected; i++) {
                 var k = Math.floor((Math.random() * problems.length) + 1);
                 console.log(problems[k]);
+                $("#generated-problems").append(
+                    `<div class="generated-problem">${problems[k]}</div>`
+                    )
             }
         }
         
