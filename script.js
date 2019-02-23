@@ -23,7 +23,7 @@ var mentalModels = [
     ["Availability Heuristic","Better recall of what is recent, frequent, important."],
     ["Leverage","Amplificating a force by using a tool, mechanical device, or machine system."],
     ["First Conclusion Bias","Tendency to settle on the first conclusion."],
-    ["Opportunity Costs","Doing one thing means not being able to do another, with the resources and time used for that option."],
+    ["Opportunity Costs","Doing one thing means not being able to do another, with the resources and time used for that option."]
     ]
 
 var problems = [
@@ -48,55 +48,47 @@ var problems = [
     "Organ Donation",
     "Kids not receiving education",
     "Global Warming",
-    "Discimination", 
+    "Discrimination", 
     "Crime",
     "Volunteering",
-    "Dealing with complicated beurocracies", 
+    "Dealing with complicated beurocracies"
     ]
 
 function generateChallenge() {
     //Saving inputted data:
-    var addedMentalModels = document.getElementById("added-mental-models").value;
     var addedProblems = document.getElementById("added-problems").value;
-
-    function sortInputtedData(dataFromInput) {
-        if (!(dataFromInput == "")) {
-            if (dataFromInput.includes(",")) {
-                //divide into substrings, and then sort into objects.
-                console.log("The string contains a comma and possibly colons" + dataFromInput);
-            } else if (dataFromInput.includes(":")) {
-                //sort the single input
-                console.log("The string contains a colon but no comma "+dataFromInput);
+    var sortedProblems, sortedMentalModels;
+        
+        function sortInput(data, sortedDataVar) {
+            if (!(data == "")) {
+                if (data.includes(",")) {
+                    sortedDataVar = data.split(",");
+                } else {
+                    sortedDataVar = [];
+                    sortedDataVar.push(data);
+                }
             } else {
-                console.log("The data you entered does not contain the correct punctuation to be used.");
+                console.log("data was null");
             }
-        } else {
-            console.log("The string is empty. Ignore and do not process input.");
         }
-        }
-        
-        sortInputtedData(addedMentalModels);
-        sortInputtedData(addedProblems);
-        
-        //function to clear the div of previous content.
-        
-        
-        
+ 
+    sortInput(addedProblems, sortedProblems);
+    
+ //within these functions create extendedMMarray or extendedProblemsArray and that includes the inputted things. 
         function generateMentalModels(numberSelected) {
             $('#generated-mental-models').empty();
             for (var i = 0; i <numberSelected; i++) {
-                var k = Math.floor((Math.random() * mentalModels.length) + 1);
+                var k = Math.floor((Math.random() * mentalModels.length));
                 console.log(mentalModels[k]);
-                $("#generated-mental-models").append(
-                    `<div class="generated-model">${mentalModels[k]}</div>`
-                    )
+                $("#generated-mental-models").append(`<div class="generated-model">${mentalModels[k]}</div>`)
             }
         }
         
         function generateProblems(numberSelected) {
             $('#generated-problems').empty();
-           for (var i = 0; i <numberSelected; i++) {
-                var k = Math.floor((Math.random() * problems.length) + 1);
+            for (var i = 0; i <numberSelected; i++) {
+                var k = Math.floor((Math.random() * problems.length));
+                console.log(problems);
                 console.log(problems[k]);
                 $("#generated-problems").append(
                     `<div class="generated-problem">${problems[k]}</div>`
@@ -106,9 +98,6 @@ function generateChallenge() {
         
         var numberOfModelsSelected = $('input[name=mental-models-number]:checked', '#number-input-mental-models').val();
         var numberOfProblemsSelected = $('input[name=problem-number]:checked', '#number-input-problems').val();
-        
-        console.log(numberOfModelsSelected);
-        console.log(numberOfProblemsSelected);
         generateMentalModels(numberOfModelsSelected);
         generateProblems(numberOfProblemsSelected);
 }
