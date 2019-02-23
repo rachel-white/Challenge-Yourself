@@ -78,7 +78,12 @@ function generateChallenge() {
         sortInputtedData(addedMentalModels);
         sortInputtedData(addedProblems);
         
+        //function to clear the div of previous content.
+        
+        
+        
         function generateMentalModels(numberSelected) {
+            $('#generated-mental-models').empty();
             for (var i = 0; i <numberSelected; i++) {
                 var k = Math.floor((Math.random() * mentalModels.length) + 1);
                 console.log(mentalModels[k]);
@@ -89,6 +94,7 @@ function generateChallenge() {
         }
         
         function generateProblems(numberSelected) {
+            $('#generated-problems').empty();
            for (var i = 0; i <numberSelected; i++) {
                 var k = Math.floor((Math.random() * problems.length) + 1);
                 console.log(problems[k]);
