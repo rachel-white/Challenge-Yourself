@@ -1,3 +1,62 @@
+/*---------------Colors---------------------------------------------- */
+
+$color-main: #FF0000;
+$color-accent: #00FF00;
+$color-other: #0000FF;
+/*---------------Fonts---------------------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=Lato|Lora');
+
+$title-font:'Lora', serif;
+$main-font:'Lato', sans-serif;
+/*------------------------------------------------------------- */
+/*------------------------------------------------------------- */
+textarea {
+    width:100%;
+    margin-top:20px;
+    height:300px;
+}
+
 h1 {
-    background-color: black;
+    font-family:$title-font;
+    text-align:center;
+    margin:20px;
+}
+
+p {
+    font-family:$main-font;
+    font-size:20px;
+}
+
+span {
+    font-weight: bold;
+}
+
+form {
+    text-align: center;
+}
+
+.title {
+    visibility:hidden;
+    font-weight:bold;
+    margin:15px;
+}
+
+.selection {
+    border:1px solid black;
+    margin:15px;
+}
+
+.center-button {
+    display:block;
+    margin:auto;
+}
+
+input[type=radio] {
+    border: 0px;
+    height: 1em;
+}
+
+.btn {
+    margin-top:10px;
+    margin-bottom: 10px;
 }
