@@ -1,61 +1,117 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Problem Solving Challenge</title>
+    <title>Mental Models Challenge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css">
 </head>
-<body>
-    <header></header>
-    <h1>Challenge Yourself!</h1>
-    <div>
-        <div>
-            <p>Mental Models</p> 
-            <form id="number-input-mental-models">
-                <input name="mental-models-number" type="radio" value="1" checked>1</>
-                <input name="mental-models-number" type="radio" value="2">2</>
-                <input name="mental-models-number" type="radio" value="3">3</>
-            </form>
-          
-            <p>Problems</p>
-            <form id="number-input-problems">
-                <input name="problem-number" type="radio" value="1" checked>1</>
-                <input name="problem-number" type="radio" value="2">2</>
-                <input name="problem-number" type="radio" value="3">3</>
-            </form>
-            
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Add Own Examples
-  </button>
-  
-  <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    contents of collapse go here.
-    <form id="text-input-problems"><input type="text" name="problems" id="added-problems">Add your own problems - Seperate each with a comma</form>
-    <form>Use these problems only.</form> <!-- toggle -->
-  </div>
-</div>
 
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 offset-md-2 col-md-8">
+                <h1>Challenge Yourself!</h1>
+            </div>
         </div>
-        <button onclick=generateChallenge()>Generate Challenge</button>
-        
-        <section id="generated-text">
-            <div id="generated-mental-models"></div>
-            <div id="generated-problems"></div>
-        </section>
     </div>
-    <form>
-        <input/>What are you thinking of?
-    </form>
-    <button>Send this to me</button>
+
+    <div class="container">
+        <div class="row">
+            <div class="offset-xs-1 col-xs-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <div class="mental-model-selection selection">
+                               <p>How many <span>Mental Models</span> do you want to use?</p>
+                                <form id="number-input-mental-models">
+                                    <input name="mental-models-number" type="radio" value="1" checked>1
+                                    <input name="mental-models-number" type="radio" value="2">2
+                                    <input name="mental-models-number" type="radio" value="3">3
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="problem-selection selection">
+                                <p>How many <span>Problems</span> do you want to use?</p>
+                                <form id="number-input-problems">
+                                    <input name="problem-number" type="radio" value="1" checked>1
+                                    <input name="problem-number" type="radio" value="2">2
+                                    <input name="problem-number" type="radio" value="3">3
+                                </form>
+                                <button class="add-examples-button btn btn-secondary center-button" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                 aria-expanded="false" aria-controls="collapseExample">
+                                    Add Own Examples <i class="fas fa-sort-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <p>Enter the problems you want to use, each seperated by a comma.</p>
+            <form id="text-input-problems"><input type="text" name="problems" id="added-problems"></form>
+            <button type="button" class="btn btn-secondary center-button" data-toggle="button" aria-pressed="false"
+                autocomplete="off">
+                Use these only. <!-- this should be atoggle button, not a click button -->
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="offset-xs-12 offset-sm-4 col-sm-4">
+                <button type="button" class="btn btn-primary center-button" onclick=generateChallenge()>Generate Challenge</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div id="generated-text" class="row">
+            <div class="col-xs-12 col-sm-6">
+                <p class="title">Mental Models</p>
+                <div id="generated-mental-models"></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <p class="title">Problems</p>
+                <div id="generated-problems"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 offset-sm-2 col-sm-8">
+                <textarea name="ideas" id="ideas" placeholder="What are you thinking?"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary center-button">Send this to me</button>
+        </div>
+    </div>
+
+    <script src="jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
-<script type="text/javascript" src="jquery-3.3.1.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="script.js"></script>
 </html>
