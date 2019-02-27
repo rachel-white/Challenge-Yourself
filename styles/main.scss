@@ -1,8 +1,12 @@
 /*---------------Colors---------------------------------------------- */
+/*---------------Pallete from https://coolors.co---------------------------------------------- */
 
-$color-main: #FF0000;
-$color-accent: #00FF00;
-$color-other: #0000FF;
+$white: #F4F4F8;
+$grey: #E6E6EA;
+$blue: #009FB7;
+$orange: #FED766;
+$red: #FE4A49;
+
 /*---------------Fonts---------------------------------------------- */
 @import url('https://fonts.googleapis.com/css?family=Lato|Lora');
 
@@ -16,14 +20,21 @@ textarea {
     height:300px;
 }
 
+body {
+    font-family: $main-font;
+    background-color: $white;
+}
+
 h1 {
     font-family:$title-font;
+    color:$blue;
     text-align:center;
     margin:20px;
 }
 
 p {
     font-family:$main-font;
+    color:$blue;
     font-size:20px;
 }
 
@@ -42,9 +53,15 @@ form {
 }
 
 .selection {
-    border:1px solid black;
+    border-radius:10px;
     margin:15px;
+    background-color:$grey;
 }
+
+.card, .card-body {
+        margin-top:5px;
+        background-color:$grey;
+    }
 
 .center-button {
     display:block;
@@ -58,5 +75,10 @@ input[type=radio] {
 
 .btn {
     margin-top:10px;
-    margin-bottom: 10px;
+    margin-bottom:10px;
+    background-color:$orange;
+}
+
+.btn-primary {
+    background-color:$red;
 }

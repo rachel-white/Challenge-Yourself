@@ -1,4 +1,63 @@
+/*---------------Colors---------------------------------------------- */
+/*---------------Pallete from https://coolors.co---------------------------------------------- */
+/*---------------Fonts---------------------------------------------- */
+@import url("https://fonts.googleapis.com/css?family=Lato|Lora");
+/*------------------------------------------------------------- */
+/*------------------------------------------------------------- */
+textarea {
+  width: 100%;
+  margin-top: 20px;
+  height: 300px; }
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #F4F4F8; }
+
 h1 {
-  background-color: black; }
+  font-family: "Lora", serif;
+  color: #009FB7;
+  text-align: center;
+  margin: 20px; }
+
+p {
+  font-family: "Lato", sans-serif;
+  color: #009FB7;
+  font-size: 20px; }
+
+span {
+  font-weight: bold; }
+
+form {
+  text-align: center; }
+
+.title {
+  visibility: hidden;
+  font-weight: bold;
+  margin: 15px; }
+
+.selection {
+  border-radius: 10px;
+  margin: 15px;
+  background-color: #E6E6EA; }
+
+.card, .card-body {
+  margin-top: 5px;
+  background-color: #E6E6EA; }
+
+.center-button {
+  display: block;
+  margin: auto; }
+
+input[type=radio] {
+  border: 0px;
+  height: 1em; }
+
+.btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #FED766; }
+
+.btn-primary {
+  background-color: #FE4A49; }
 
 /*# sourceMappingURL=main.css.map */
