@@ -97,8 +97,12 @@ function generateChallenge() {
         generateProblems(numberOfProblemsSelected);
 }
 
-$(".add-input").click(function(){
-  $("#text-input-problems").append(
+function addInputArea() {
+     $("#text-input-problems").append(
     `<input type="text" name="problems"
       class="full-width-input added-problems">`);
+}
+
+$(".add-input").click(function(){
+ addInputArea();
 });
