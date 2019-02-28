@@ -24,7 +24,7 @@ var mentalModels = [
     ["Leverage","Amplificating a force by using a tool, mechanical device, or machine system."],
     ["First Conclusion Bias","Tendency to settle on the first conclusion."],
     ["Opportunity Costs","Doing one thing means not being able to do another, with the resources and time used for that option."]
-    ]
+    ];
 
 var problems = [
     "Lack of neighbourhood cohesion", 
@@ -36,11 +36,6 @@ var problems = [
     "Distances to travel for commodities",
     "Procrastinating on projects you want to acheive.",
     "Procrastinating at work",
-    "Difficult situation with someone at work",
-    "Relationships not as you would like them to be",
-    "Character traits you want to change",
-    "Being more motivated",
-    "Being overwhelmed with stress",
     "Not eating well",
     "Global Health", 
     "Poverty",
@@ -50,54 +45,60 @@ var problems = [
     "Global Warming",
     "Discrimination", 
     "Crime",
-    "Volunteering",
-    "Dealing with complicated beurocracies"
-    ]
+    "Volunteering"
+    ];
+    
+function displayTitles() {
+    $("#generated-text").html(`
+    <div class="col-xs-12 col-sm-6">
+                <p class="title">Mental Models</p>
+                <div id="generated-mental-models"></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <p class="title">Problems</p>
+                <div id="generated-problems"></div>
+            </div>`)
+}
 
 function generateChallenge() {
     //Saving inputted data:
-    var addedProblems = document.getElementById("added-problems").value;
-    var sortedProblems, sortedMentalModels;
-        
-        function sortInput(data, sortedDataVar) {
-            if (!(data == "")) {
-                if (data.includes(",")) {
-                    sortedDataVar = data.split(",");
-                } else {
-                    sortedDataVar = [];
-                    sortedDataVar.push(data);
-                }
-            } else {
-                console.log("data was null");
-            }
-        }
- 
-    sortInput(addedProblems, sortedProblems);
+    var numberOfModelsSelected = $('input[name=mental-models-number]:checked', '#number-input-mental-models').val();
+    var numberOfProblemsSelected = $('input[name=problem-number]:checked', '#number-input-problems').val();
     
- //within these functions create extendedMMarray or extendedProblemsArray and that includes the inputted things. 
+    var sortedProblems = [];
+    
         function generateMentalModels(numberSelected) {
             $('#generated-mental-models').empty();
             for (var i = 0; i <numberSelected; i++) {
                 var k = Math.floor((Math.random() * mentalModels.length));
-                console.log(mentalModels[k]);
-                $("#generated-mental-models").append(`<div class="generated-model">${mentalModels[k]}</div>`)
+                $("#generated-mental-models").append(`<div class="generated-model">${mentalModels[k]}</div>`);
             }
         }
         
         function generateProblems(numberSelected) {
-            $('#generated-problems').empty();
-            for (var i = 0; i <numberSelected; i++) {
-                var k = Math.floor((Math.random() * problems.length));
-                console.log(problems);
-                console.log(problems[k]);
-                $("#generated-problems").append(
-                    `<div class="generated-problem">${problems[k]}</div>`
-                    )
-            }
+             $('#generated-problems').empty();
+                for (var i = 0; i <numberSelected; i++) {
+                    if (addedProblems == "") {
+                        var k = Math.floor((Math.random() * problems.length));
+                        $("#generated-problems").append(`<div class="generated-problem">${problems[k]}</div>`);
+                    } else {
+                        console.log("is this reached");
+                        var problemsExtended = problems.concat(sortedProblems);
+                        console.log(problemsExtended);
+                        var j = Math.floor((Math.random() * problemsExtended.length));
+                        $("#generated-problems").append(`<div class="generated-problem">${problemsExtended[j]}</div>`);
+                    }
+                }
         }
         
-        var numberOfModelsSelected = $('input[name=mental-models-number]:checked', '#number-input-mental-models').val();
-        var numberOfProblemsSelected = $('input[name=problem-number]:checked', '#number-input-problems').val();
+        displayTitles();
         generateMentalModels(numberOfModelsSelected);
         generateProblems(numberOfProblemsSelected);
 }
+
+$(".add-input").click(function(){
+  $("#text-input-problems").append(
+    `<input type="text" name="problems"
+      class="full-width-input added-problems">`);
+});
