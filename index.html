@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css">
 </head>
 
@@ -16,61 +17,96 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 offset-md-2 col-md-8">
-                <h1>Challenge Yourself!</h1>
+                <h1>Challenge Yourself</h1>
             </div>
         </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="offset-xs-1 col-xs-10">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                             <div class="mental-model-selection selection">
-                               <p>How many <span>Mental Models</span> do you want to use?</p>
+                                <p>How many <span>Mental Models</span> do you want to include?</p>
                                 <form id="number-input-mental-models">
-                                    <input name="mental-models-number" type="radio" value="1" checked>1
-                                    <input name="mental-models-number" type="radio" value="2">2
-                                    <input name="mental-models-number" type="radio" value="3">3
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="1" value="1" checked>
+                                        <label class="form-check-label" for="1">
+                                            1
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="2" value="2">
+                                        <label class="form-check-label" for="2">
+                                            2
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="3" value="3">
+                                        <label class="form-check-label" for="3">
+                                            3
+                                        </label>
+                                    </div>
                                 </form>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-6">
                             <div class="problem-selection selection">
-                                <p>How many <span>Problems</span> do you want to use?</p>
+                                <p>How many <span>Problems</span> do you want to include?</p>
                                 <form id="number-input-problems">
-                                    <input name="problem-number" type="radio" value="1" checked>1
-                                    <input name="problem-number" type="radio" value="2">2
-                                    <input name="problem-number" type="radio" value="3">3
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="1" value="1" checked>
+                                        <label class="form-check-label" for="1">
+                                            1
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="2" value="2">
+                                        <label class="form-check-label" for="2">
+                                            2
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="3" value="3">
+                                        <label class="form-check-label" for="3">
+                                            3
+                                        </label>
+                                    </div>
                                 </form>
-                                <button class="add-examples-button btn center-button" type="button" data-toggle="collapse" data-target="#collapseExample"
-                                 aria-expanded="false" aria-controls="collapseExample">
+                                <button class="add-examples-button btn center-button" type="button"
+                                    data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                                    aria-controls="collapseExample">
                                     Add Own Examples <i class="fas fa-sort-down"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+    <div class="container">
+        <div class="row">
+            <div class="offset-xs-1 col-xs-10 offset-sm-2 col-sm-8">
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <p>Enter the problems you want to use, each seperated by a comma.</p>
+                        <form id="text-input-problems"><input type="text" name="problems"
+                                class="full-width-input added-problems"> <i class="fas fa-plus-circle add-input"></i>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                                <p class="toggle">Use these only</p>
+                            </label>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-            <p>Enter the problems you want to use, each seperated by a comma.</p>
-            <form id="text-input-problems"><input type="text" name="problems" id="added-problems"></form>
-            <button type="button" class="btn center-button" data-toggle="button" aria-pressed="false"
-                autocomplete="off">
-                Use these only. <!-- this should be atoggle button, not a click button -->
-            </button>
-        </div>
-    </div>
 
     <div class="container">
         <div class="row">
             <div class="offset-xs-12 offset-sm-4 col-sm-4">
-                <button type="button" class="btn btn-primary center-button" onclick=generateChallenge()>Generate Challenge</button>
+                <button id="generate-challenge" class="btn btn-emphasis center-button" onclick=generateChallenge()>
+                    Generate Challenge</button>
             </div>
         </div>
     </div>
@@ -78,26 +114,19 @@
 
     <div class="container">
         <div id="generated-text" class="row">
-            <div class="col-xs-12 col-sm-6">
-                <p class="title">Mental Models</p>
-                <div id="generated-mental-models"></div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6">
-                <p class="title">Problems</p>
-                <div id="generated-problems"></div>
-            </div>
         </div>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-xs-12 offset-sm-2 col-sm-8">
-                <textarea name="ideas" id="ideas" placeholder="What are you thinking?"></textarea>
+                <div class="form-group">
+                    <textarea class="form-control" rows="10" placeholder="What are you thinking?"></textarea>
+                </div>
             </div>
         </div>
         <div class="row">
-            <button type="button" class="btn btn-primary center-button">Send this to me</button>
+            <button type="button" class="btn btn-emphasis center-button">Send this to me</button>
         </div>
     </div>
 
