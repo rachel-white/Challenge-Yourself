@@ -28,20 +28,23 @@
                                 <p>How many <span>Mental Models</span> do you want to include?</p>
                                 <form id="number-input-mental-models">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" id="1" value="1" checked>
-                                        <label class="form-check-label" for="1">
+                                        <input class="form-check-input" type="radio" value="1" id="mental-model-1" 
+                                        name="mental-model-number" checked>
+                                        <label class="form-check-label" for="mental-model-1">
                                             1
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" id="2" value="2">
-                                        <label class="form-check-label" for="2">
+                                        <input class="form-check-input" type="radio" id="mental-model-2" value="2"
+                                        name="mental-model-number">
+                                        <label class="form-check-label" for="mental-model-2">
                                             2
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" id="3" value="3">
-                                        <label class="form-check-label" for="3">
+                                        <input class="form-check-input" type="radio" id="mental-model-3" value="3"
+                                        name="mental-model-number">
+                                        <label class="form-check-label" for="mental-model-3">
                                             3
                                         </label>
                                     </div>
@@ -53,20 +56,23 @@
                                 <p>How many <span>Problems</span> do you want to include?</p>
                                 <form id="number-input-problems">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" id="1" value="1" checked>
-                                        <label class="form-check-label" for="1">
+                                        <input class="form-check-input" type="radio" value="1" id="problem-1" 
+                                        name="problem-number" checked>
+                                        <label class="form-check-label" for="problem-1">
                                             1
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" id="2" value="2">
-                                        <label class="form-check-label" for="2">
+                                        <input class="form-check-input" type="radio" value="2" id="problem-2"
+                                        name="problem-number">
+                                        <label class="form-check-label" for="problem-2">
                                             2
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" id="3" value="3">
-                                        <label class="form-check-label" for="3">
+                                        <input class="form-check-input" type="radio" value="3" id="problem-3"
+                                        name="problem-number">
+                                        <label class="form-check-label" for="problem-3">
                                             3
                                         </label>
                                     </div>
@@ -111,9 +117,15 @@
         </div>
     </div>
 
-
     <div class="container">
         <div id="generated-text" class="row">
+            <div class="col-xs-12 col-sm-6 mental-models-section">
+                <div id="generated-mental-models"></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 problems-section">
+                <div id="generated-problems"></div>
+            </div>`
         </div>
     </div>
 
