@@ -51,7 +51,6 @@ var problems = [
 function displayTitles() {
     $(".mental-models-section").empty();
     $(".problems-section").empty();
-    console.log("diplayTitles function triggered");
     $(".mental-models-section").append(`<p class="title">Mental Models</p>`);
     $(".problems-section").append(`<p class="title">Problems</p>`);
 }
