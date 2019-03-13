@@ -55,22 +55,24 @@ function displayTitles() {
     $(".problems-section").append(`<p class="title">Problems</p>`);
 }
 
-function generateChallenge() {
+function generateChallenge(){
     console.log("is this reached - generateChallenge function");
     //Saving inputted data:
-    var numberOfModelsSelected = $('input[name=mental-models-number]:checked', '#number-input-mental-models').val();
-    var numberOfProblemsSelected = $('input[name=problem-number]:checked', '#number-input-problems').val();
+    //var numberOfModelsSelected = $('input[name=mental-models-number]:checked', '#number-input-mental-models').val();
+    var numberOfModelsSelected = document.querySelector('input[name="mental-model-number"]:checked').value;
+    var numberOfProblemsSelected = document.querySelector('input[name="problem-number"]:checked').value;
     
-        function generateMentalModels(numberSelected) {
+        function generateMentalModels(number) {
             console.log("is this reached - generate MM function");
             $('#generated-mental-models').empty();
-            for (var i = 0; i <numberSelected; i++) {
+            console.log(number);
+            for (var i = 0; i < number; i++) {
                 var k = Math.floor((Math.random() * mentalModels.length));
                 console.log(k);
                 console.log(mentalModels[k]);
-                document.getElementById("generated-mental-models").innerHTML+=(
-                    `<div class="generated-model">${mentalModels[k]}</div>`);
-               // $("#generated-mental-models").append(`<div class="generated-model">${mentalModels[k]}</div>`);
+                //document.getElementById("generated-mental-models").append(
+                 //   `<div class="generated-model">${mentalModels[k]}</div>`);
+               $("#generated-mental-models").append(`<div class="generated-model">${mentalModels[k]}</div>`);
                 //issue of adding to dynamically created jquery element.
             }
         }
@@ -115,3 +117,7 @@ $(".add-input").click(function(){
  addInputArea();
  storeInputs();
 });
+
+function emailResponses() {
+    var responses = $("#responses").val();
+}
