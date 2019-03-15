@@ -49,8 +49,11 @@ var problems = [
     ];
     
 function displayTitles() {
-    $(".mental-models-section").append(`<p class="title">Mental Models</p>`);
-    $(".problems-section").append(`<p class="title">Problems</p>`);
+    
+    //$(".mental-models-section").append(`<p class="title">Mental Models</p>`);
+   // $(".problems-section").append(`<p class="title">Problems</p>`);
+   $(".title-mm").html(`<p class="title">Mental Models</p>`);
+   $(".title-problems").html(`<p class="title">Problems</p>`);
 }
 
 function generateChallenge(){
