@@ -49,37 +49,28 @@ var problems = [
     ];
     
 function displayTitles() {
-    
-    //$(".mental-models-section").append(`<p class="title">Mental Models</p>`);
-   // $(".problems-section").append(`<p class="title">Problems</p>`);
    $(".title-mm").html(`<p class="title">Mental Models</p>`);
-   $(".title-problems").html(`<p class="title">Problems</p>`);
+   $(".title-problems").html(`<p class="title">Problems</p>`);  
 }
 
 function generateChallenge(){
-    console.log("is this reached - generateChallenge function");
     //Saving inputted data:
-    //var numberOfModelsSelected = $('input[name=mental-models-number]:checked', '#number-input-mental-models').val();
     var numberOfModelsSelected = document.querySelector('input[name="mental-model-number"]:checked').value;
     var numberOfProblemsSelected = document.querySelector('input[name="problem-number"]:checked').value;
         
     function generateMentalModels(number) {
-            console.log("is this reached - generate MM function");
-            //$('#generated-mental-models').empty();
             document.getElementById('generated-mental-models').innerHTML="";
-            console.log(number);
-            for (var i = 0; i < number; i++) {
-                var k;
-                k = Math.floor((Math.random() * mentalModels.length));
-                console.log("this is k" + k);
-                var firstMM = mentalModels[k];
-                console.log("this is firstMM" + firstMM);
-               $("#generated-mental-models").html(`<div class="generated-model">${mentalModels[k]}</div>`);
+            for (var i = 0; i <= number; i++) {
+                var k = Math.floor((Math.random() * mentalModels.length));
+                console.log("this is k " + k);
+               // var firstMM = mentalModels[k];
+               // console.log("this is firstMM" + firstMM);
+               $("#generated-mental-models").append(`<div class="generated-model">${mentalModels[k]}</div>`);
                 //issue of adding to dynamically created jquery element.
             }
         }
         
-        function generateProblems(numberSelected) {
+    function generateProblems(numberSelected) {
             console.log("is this reached - geneate problems function");
              $('#generated-problems').empty();
                 for (var i = 0; i <numberSelected; i++) {
