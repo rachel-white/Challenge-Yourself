@@ -60,7 +60,7 @@ function generateChallenge(){
         
     function generateMentalModels(number) {
             document.getElementById('generated-mental-models').innerHTML="";
-            for (var i = 0; i <= number; i++) {
+            for (var i = 0; i < number; i++) {
                 var k = Math.floor((Math.random() * mentalModels.length));
                 console.log("this is k " + k);
               $("#generated-mental-models").append(`<div class="generated-model term">${mentalModels[k][0]}</div>`);
