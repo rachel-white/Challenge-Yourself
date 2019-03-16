@@ -78,20 +78,18 @@ function generateChallenge(){
         if (addedProblems == undefined || addedProblems == "") {
             for (var i = 0; i < numberSelected; i++) {
                 var q = Math.floor((Math.random() * problems.length));
-                console.log("this is q " + q);
                 $("#generated-problems").append(`<div class="generated-model">${problems[q]}</div>`);
                 }
         } else {
-            //use added problems
             for (var t = 0; t < addedProblems.length; t++) {
                 $("#generated-problems").append(`<div class="generated-model">${addedProblems[t]}</div>`);
             }
             }
         }
         
-        displayTitles();
-        generateMentalModels(numberOfModelsSelected);
-       generateProblems(numberOfProblemsSelected);
+    displayTitles();
+    generateMentalModels(numberOfModelsSelected);
+    generateProblems(numberOfProblemsSelected);
 }
 
 function addInputArea() {
@@ -99,19 +97,6 @@ function addInputArea() {
     `<input type="text" name="problems"
       class="full-width-input added-problems">`);
 }
-
-function storeInputs() {
-    if (!($(".add-input").value == "")) {
-        var storedInputs = [];
-        storedInputs.push($(".add-input").value);
-        console.log(storedInputs);
-    } return storedInputs;
-}
-
-$(".add-input").click(function(){
- addInputArea();
- storeInputs();
-});
 
 function emailResponses() {
     var responses = $("#responses").val();
