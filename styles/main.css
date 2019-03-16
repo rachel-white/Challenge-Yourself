@@ -72,6 +72,10 @@ input[type=radio] {
 .toggle {
   position: inline-block;
   width: 110px; }
+  
+.term {
+  font-weight:bold;
+}
 
 /*----------------------------*/
 .added-problems {

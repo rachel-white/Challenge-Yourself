@@ -63,10 +63,8 @@ function generateChallenge(){
             for (var i = 0; i <= number; i++) {
                 var k = Math.floor((Math.random() * mentalModels.length));
                 console.log("this is k " + k);
-               // var firstMM = mentalModels[k];
-               // console.log("this is firstMM" + firstMM);
-               $("#generated-mental-models").append(`<div class="generated-model">${mentalModels[k]}</div>`);
-                //issue of adding to dynamically created jquery element.
+              $("#generated-mental-models").append(`<div class="generated-model term">${mentalModels[k][0]}</div>`);
+              $("#generated-mental-models").append(`<div class="generated-model definition">${mentalModels[k][1]}</div>`);
             }
         }
         
