@@ -83,7 +83,9 @@ function generateChallenge(){
                 }
         } else {
             //use added problems
-            $("#generated-problems").append(`<div class="generated-model">${addedProblems}</div>`);
+            for (var t = 0; t < addedProblems.length; t++) {
+                $("#generated-problems").append(`<div class="generated-model">${addedProblems[t]}</div>`);
+            }
             }
         }
         
