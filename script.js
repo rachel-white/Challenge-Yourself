@@ -75,7 +75,7 @@ function generateChallenge(){
         for (var p = 0; p < inputtedProblems.length; p++) {
             addedProblems.push(inputtedProblems[p].value);
         }
-        if (addedProblems == undefined) {
+        if (addedProblems == undefined || addedProblems == "") {
             for (var i = 0; i < numberSelected; i++) {
                 var q = Math.floor((Math.random() * problems.length));
                 console.log("this is q " + q);
