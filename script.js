@@ -55,6 +55,7 @@ function displayTitles() {
 
 function generateChallenge(){
     //Saving inputted data:
+    //code from: https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button - this line: document.querySelector('input[name="rate"]:checked').value;
     var numberOfModelsSelected = document.querySelector('input[name="mental-model-number"]:checked').value;
     var numberOfProblemsSelected = document.querySelector('input[name="problem-number"]:checked').value;
         
@@ -68,20 +69,21 @@ function generateChallenge(){
         }
         
     function generateProblems(numberSelected) {
-        var addedProblems = document.getElementsByClassName("added-problems");
-        console.log(addedProblems);
-        console.log(numberSelected);
+        var addedProblems = [];
+        var inputtedProblems = document.getElementsByClassName("added-problems");
+        for (var p = 0; p < inputtedProblems.length; p++) {
+            addedProblems.push(inputtedProblems[p].value);
+        }
+        addedProblems = document.getElementsByClassName("added-problems").value;
          document.getElementById('generated-problems').innerHTML="";
-        if (addedProblems == "") {
-            console.log("added problems is empty.");
-            //generate problems from array
-        } else {
-            //use added problems
+        if (addedProblems == undefined) {
             for (var i = 0; i < numberSelected; i++) {
                 var q = Math.floor((Math.random() * problems.length));
                 console.log("this is q " + q);
                 $("#generated-problems").append(`<div class="generated-model">${problems[q]}</div>`);
                 }
+        } else {
+            //use added problems
             }
         }
         
