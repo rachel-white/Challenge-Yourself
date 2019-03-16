@@ -62,32 +62,32 @@ function generateChallenge(){
             document.getElementById('generated-mental-models').innerHTML="";
             for (var i = 0; i < number; i++) {
                 var k = Math.floor((Math.random() * mentalModels.length));
-                console.log("this is k " + k);
               $("#generated-mental-models").append(`<div class="generated-model term">${mentalModels[k][0]}</div>`);
               $("#generated-mental-models").append(`<div class="generated-model definition">${mentalModels[k][1]}</div>`);
             }
         }
         
     function generateProblems(numberSelected) {
-            console.log("is this reached - geneate problems function");
-             $('#generated-problems').empty();
-                for (var i = 0; i <numberSelected; i++) {
-                    if (addedProblems == "") {
-                        var k = Math.floor((Math.random() * problems.length));
-                        $("#generated-problems").append(`<div class="generated-problem">${problems[k]}</div>`);
-                    } else {
-                        console.log("is this reached");
-                       var problemsExtended = problems.concat(sortedProblems);
-                        console.log(problemsExtended);
-                        var j = Math.floor((Math.random() * problemsExtended.length));
-                        $("#generated-problems").append(`<div class="generated-problem">${problemsExtended[j]}</div>`);
-                    }
+        var addedProblems = document.getElementsByClassName("added-problems");
+        console.log(addedProblems);
+        console.log(numberSelected);
+         document.getElementById('generated-problems').innerHTML="";
+        if (addedProblems == "") {
+            console.log("added problems is empty.");
+            //generate problems from array
+        } else {
+            //use added problems
+            for (var i = 0; i < numberSelected; i++) {
+                var q = Math.floor((Math.random() * problems.length));
+                console.log("this is q " + q);
+                $("#generated-problems").append(`<div class="generated-model">${problems[q]}</div>`);
                 }
+            }
         }
         
         displayTitles();
         generateMentalModels(numberOfModelsSelected);
-       // generateProblems(numberOfProblemsSelected);
+       generateProblems(numberOfProblemsSelected);
 }
 
 function addInputArea() {
