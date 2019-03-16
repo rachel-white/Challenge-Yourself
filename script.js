@@ -69,13 +69,12 @@ function generateChallenge(){
         }
         
     function generateProblems(numberSelected) {
+        document.getElementById('generated-problems').innerHTML="";
         var addedProblems = [];
         var inputtedProblems = document.getElementsByClassName("added-problems");
         for (var p = 0; p < inputtedProblems.length; p++) {
             addedProblems.push(inputtedProblems[p].value);
         }
-        addedProblems = document.getElementsByClassName("added-problems").value;
-         document.getElementById('generated-problems').innerHTML="";
         if (addedProblems == undefined) {
             for (var i = 0; i < numberSelected; i++) {
                 var q = Math.floor((Math.random() * problems.length));
@@ -84,6 +83,7 @@ function generateChallenge(){
                 }
         } else {
             //use added problems
+            $("#generated-problems").append(`<div class="generated-model">${addedProblems}</div>`);
             }
         }
         
