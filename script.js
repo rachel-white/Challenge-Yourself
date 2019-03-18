@@ -48,6 +48,9 @@ var problems = [
     "Volunteering"
     ];
     
+var usedProblems = [];
+var usedMentalModels = [];
+    
 function displayTitles() {
    $(".title-mm").html(`<p class="title">Mental Models</p>`);
    $(".title-problems").html(`<p class="title">Problems</p>`);  
@@ -58,6 +61,8 @@ function generateChallenge(){
     //code from: https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button - this line: document.querySelector('input[name="rate"]:checked').value;
     var numberOfModelsSelected = document.querySelector('input[name="mental-model-number"]:checked').value;
     var numberOfProblemsSelected = document.querySelector('input[name="problem-number"]:checked').value;
+    usedMentalModels = [];
+    usedProblems = [];
         
     function generateMentalModels(number) {
             document.getElementById('generated-mental-models').innerHTML="";
@@ -65,6 +70,7 @@ function generateChallenge(){
                 var k = Math.floor((Math.random() * mentalModels.length));
               $("#generated-mental-models").append(`<div class="generated-model term">${mentalModels[k][0]}</div>`);
               $("#generated-mental-models").append(`<div class="generated-model definition">${mentalModels[k][1]}</div>`);
+              usedMentalModels.push(`${mentalModels[k]}`);
             }
         }
         
@@ -79,10 +85,12 @@ function generateChallenge(){
             for (var i = 0; i < numberSelected; i++) {
                 var q = Math.floor((Math.random() * problems.length));
                 $("#generated-problems").append(`<div class="generated-model">${problems[q]}</div>`);
+                usedProblems.push(`${problems[q]}`);
                 }
         } else {
             for (var t = 0; t < addedProblems.length; t++) {
                 $("#generated-problems").append(`<div class="generated-model">${addedProblems[t]}</div>`);
+                usedProblems.push(`${addedProblems[t]}`);
             }
             }
         }
