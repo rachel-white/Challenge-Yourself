@@ -15,7 +15,6 @@
 /*global emailjs*/
    (function(){
       emailjs.init("user_XSaDzJinjW7a59brQLVam");
-      emailjs.send("Gmail", "challenge_responses",{})
    })();
 </script>
 </head>
@@ -79,7 +78,7 @@
                         </div>
                     </form>
                     <button class="add-examples-button btn center-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    Use Own Examples <i class="fas fa-sort-down"></i>
+                                    Use Own Example<i class="fas fa-sort-down"></i>
                                 </button>
                 </div>
             </div>
@@ -93,7 +92,6 @@
                     <div class="card card-body">
                         <form id="text-input-problems"><input type="text" name="problems" class="full-width-input added-problems">
                         </form>
-                        <i class="fas fa-plus-circle"></i>
                     </div>
                 </div>
             </div>
@@ -133,15 +131,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-6">
+            <div class="col-xs-12">
                 <form>
-                    <input id="email-address" type="text" name="email" placeholder="Email Address">
-                </form>
-            </div>
-            <div class="col-xs-6">
-                <button id="send-button" type="button" class="btn btn-emphasis center-button" onclick=saveVarsOnSendButtonClick()>Send this to me</button>
-            </div>
-
+               <!-- <form onsubmit="return sendMail(this);">  -->
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <input type="text" name="emailaddress" class="form-control" id="email-address" placeholder="Email" required/>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="submit" id="send" class="btn btn-emphasis center-button" onclick=sendEmail()>Send this to me</button>
+                        </div>
+                    </div>
+                     
+                     
+</form>
         </div>
     </div>
 
