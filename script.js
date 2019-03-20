@@ -50,7 +50,15 @@ var problems = [
     
 var usedProblems = [];
 var usedMentalModels = [];
-    
+var addedProblems;
+var responses;
+var emailAddress;
+
+function saveVarsOnSendButtonClick() {
+    responses = document.getElementById("responses").value;
+    emailAddress = document.getElementById("email-address").value;
+}
+
 function displayTitles() {
    $(".title-mm").html(`<p class="title">Mental Models</p>`);
    $(".title-problems").html(`<p class="title">Problems</p>`);  
@@ -76,7 +84,7 @@ function generateChallenge(){
         
     function generateProblems(numberSelected) {
         document.getElementById('generated-problems').innerHTML="";
-        var addedProblems = [];
+        addedProblems = [];
         var inputtedProblems = document.getElementsByClassName("added-problems");
         for (var p = 0; p < inputtedProblems.length; p++) {
             addedProblems.push(inputtedProblems[p].value);
@@ -104,8 +112,4 @@ function addInputArea() {
      $("#text-input-problems").append(
     `<input type="text" name="problems"
       class="full-width-input added-problems">`);
-}
-
-function emailResponses() {
-    var responses = $("#responses").val();
 }
