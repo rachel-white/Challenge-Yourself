@@ -6,17 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mental Models Challenge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css">
-    
+
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-<script type="text/javascript">
-/*global emailjs*/
-   (function(){
-      emailjs.init("user_XSaDzJinjW7a59brQLVam");
-   })();
-</script>
+    <script type="text/javascript">
+        /*global emailjs*/
+        (function () {
+            emailjs.init("user_XSaDzJinjW7a59brQLVam");
+        })();
+    </script>
 </head>
 
 <body>
@@ -34,22 +36,25 @@
                     <p>How many <span>Mental Models</span> do you want to include?</p>
                     <form id="number-input-mental-models">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" value="1" id="mental-model-1" name="mental-model-number" checked>
+                            <input class="form-check-input" type="radio" value="1" id="mental-model-1"
+                                name="mental-model-number" checked>
                             <label class="form-check-label" for="mental-model-1">
-                                            1
-                                        </label>
+                                1
+                            </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="mental-model-2" value="2" name="mental-model-number">
+                            <input class="form-check-input" type="radio" id="mental-model-2" value="2"
+                                name="mental-model-number">
                             <label class="form-check-label" for="mental-model-2">
-                                            2
-                                        </label>
+                                2
+                            </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="mental-model-3" value="3" name="mental-model-number">
+                            <input class="form-check-input" type="radio" id="mental-model-3" value="3"
+                                name="mental-model-number">
                             <label class="form-check-label" for="mental-model-3">
-                                            3
-                                        </label>
+                                3
+                            </label>
                         </div>
                     </form>
                 </div>
@@ -59,27 +64,29 @@
                     <p>How many <span>Problems</span> do you want to include?</p>
                     <form id="number-input-problems">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" value="1" id="problem-1" name="problem-number" checked>
+                            <input class="form-check-input" type="radio" value="1" id="problem-1" name="problem-number"
+                                checked>
                             <label class="form-check-label" for="problem-1">
-                                            1
-                                        </label>
+                                1
+                            </label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" value="2" id="problem-2" name="problem-number">
                             <label class="form-check-label" for="problem-2">
-                                            2
-                                        </label>
+                                2
+                            </label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" value="3" id="problem-3" name="problem-number">
                             <label class="form-check-label" for="problem-3">
-                                            3
-                                        </label>
+                                3
+                            </label>
                         </div>
                     </form>
-                    <button class="add-examples-button btn center-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    Use Own Example<i class="fas fa-sort-down"></i>
-                                </button>
+                    <button class="add-examples-button btn center-button" type="button" data-toggle="collapse"
+                        data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Use Own Example<i class="fas fa-sort-down"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -90,14 +97,14 @@
             <div class="offset-xs-1 col-xs-10 offset-sm-2 col-sm-8">
                 <div class="collapse" id="collapseExample">
                     <div class="card card-body">
-                        <form id="text-input-problems"><input type="text" name="problems" class="full-width-input added-problems">
+                        <form id="text-input-problems"><input type="text" name="problems"
+                                class="full-width-input added-problems">
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <div class="container">
         <div class="row">
@@ -126,33 +133,35 @@
         <div class="row">
             <div class="col-xs-12 offset-sm-2 col-sm-8">
                 <div class="form-group">
-                    <textarea id="responses" class="form-control" rows="10" placeholder="What are you thinking?"></textarea>
+                    <textarea id="responses" class="form-control" rows="10"
+                        placeholder="What are you thinking?"></textarea>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
-                <form>
-               <!-- <form onsubmit="return sendMail(this);">  -->
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <input type="text" name="emailaddress" class="form-control" id="email-address" placeholder="Email" required/>
+                        <div class="col-xs-6 col-md-3 offset-md-3">
+                            <form>
+                            <input type="text" name="emailaddress" class="form-control" id="email-address"
+                                placeholder="Email" required />
                         </div>
-                        <div class="col-xs-6">
-                            <button type="submit" id="send" class="btn btn-emphasis center-button" onclick=sendEmail()>Send this to me</button>
+                        <div class="col-xs-6 col-md-3">
+                            <button type="submit" id="send" class="btn btn-emphasis center-button"
+                                onclick=sendEmail()>Send this to me</button>
+                                </form>
                         </div>
                     </div>
-                     
-                     
-</form>
-        </div>
-    </div>
 
-    <script src="jquery-3.3.1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+        <script src="jquery-3.3.1.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
