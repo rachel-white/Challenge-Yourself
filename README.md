@@ -10,18 +10,19 @@ with in response to the challenge. The user can then email themselves their resp
 
 The website is a intellectual exercise / game, and is for someone keen to practice their creative thinking 
 and problem solving. It is also suitable for someone who wants to understand how mental models can be used
-to better think about a problem.
+to think about a problem in a focused, productive way.
 
 #### User Stories:
-I want to practice using mental models as a problem solving method, in order to use that skill in my work.
-I want to have an intellectual challenge, as a source of entertainment.
-I want to use different mental models to think about a specific problem I want to solve.
+- I want to practice using mental models as a problem solving method, in order to use that skill in my work.
+- I want to have an intellectual challenge, as a source of entertainment.
+- I want to use different mental models to think about a specific problem I want to solve.
 
-//link to wireframes / include them somehow
+#### Wireframes: 
+
+My Wireframes for this project are included as images in the /wireframes directory.
 
 ### Features
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
-Features
+
  - User can select the number of mental models or problems they would like to include.
 
 - The user can add their own text for the problem to be used.
@@ -53,26 +54,29 @@ Features
 - [Coloors](https://coolors.co/)
     - Coloors used for the colour scheme.
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+
 
 ### Testing
 
-- HTML Validator
-- CSS Validator
-- JS Lint
-- 
-or any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+- [HTML Validator](https://jigsaw.w3.org/css-validator/validator)
+- [CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [JS Hint](https://jshint.com/)
+- I used the HTML Validator, CSS Validator, and JS Lint to check my HTML, CSS, and 
+JS files.
+
+- I tested the emailjs functionality with the different situations someone could
+be sending the email to check it works correctly.
+
+### Bug
+- One bug I noticed but haven't fixed is, when someone sends an email to themselves
+without having clicked the "Generate Challenge" button, or entered any responses
+into the textarea, no email is sent.
 
 ### Deployment
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+The Website is deployed using GitHub Pages - https://rachel-white.github.io/Challenge-Yourself/ .
 
 ### Credits
 - Content: Mental Models mostly written based on information from [Farnam Street](https://fs.blog/).
 - Made with a lot of help from the Code Institute Mentors! Thank you Nick, Michael, Haley, and Nakita. 
+- Thank you to Adam Gibbons for help on Slack. 
