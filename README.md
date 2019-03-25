@@ -61,8 +61,9 @@ My Wireframes for this project are included as images in the /wireframes directo
 - [HTML Validator](https://jigsaw.w3.org/css-validator/validator)
 - [CSS Validator](https://jigsaw.w3.org/css-validator/)
 - [JS Hint](https://jshint.com/)
+- [Responsinator](https://www.responsinator.com/)
 - I used the HTML Validator, CSS Validator, and JS Lint to check my HTML, CSS, and 
-JS files.
+JS files. I used the Responsinator to check the responsiveness of my page.
 
 - I tested the emailjs functionality with the different situations someone could
 be sending the email to check it works correctly.
