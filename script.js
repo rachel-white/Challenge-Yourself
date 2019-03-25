@@ -57,25 +57,20 @@ var emailAddress;
 function saveVarsOnSendButtonClick() {
     responses = document.getElementById("responses").value;
     emailAddress = document.getElementById("email-address").value;
-    console.log(responses);
-    console.log(emailAddress);
 }
 
 function sendEmail() {
     /*global emailjs*/
     saveVarsOnSendButtonClick();
-    console.log("this sendEmail function is being run");
-    console.log(emailAddress);
-    emailjs.send("Gmail", "challenge_responses", {
+       emailjs.send("Gmail", "challenge_responses", {
         usedProblems,
         usedMentalModels,
         responses,
         emailAddress,
         "from_email": "mentalmodelchallenge@gmail.com",
-       // "to_email": emailAddress,
     }
-    )
-}
+    ) 
+    }
 
 function displayTitles() {
    $(".title-mm").html(`<p class="title">Mental Models</p>`);
