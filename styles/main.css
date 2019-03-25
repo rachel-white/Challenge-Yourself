@@ -68,10 +68,6 @@ input[type=radio] {
 
 .add-examples-button {
   margin-bottom: 20px; }
-
-.toggle {
-  position: inline-block;
-  width: 110px; }
   
 .term {
   font-weight:bold;
