@@ -62,7 +62,7 @@ function saveVarsOnSendButtonClick() {
 function sendEmail() {
     /*global emailjs*/
     saveVarsOnSendButtonClick();
-       emailjs.send("Gmail", "challenge_responses", {
+       emailjs.send("gmail", "challenge_responses", {
         usedProblems,
         usedMentalModels,
         responses,
